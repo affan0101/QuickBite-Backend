@@ -9,10 +9,12 @@ import com.quickbite.backend.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
 import org.springframework.security.authentication.UsernamePasswordAuthenticationToken;
+import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
 import java.util.ArrayList;
+import java.util.Collections;
 
 @Service
 public class AuthService {
@@ -36,14 +38,14 @@ public class AuthService {
                         .email(registerRequest.getEmail())
                         .password(passwordEncoder.encode(registerRequest.getPassword()))
                         .phoneNumber(registerRequest.getPhoneNumber())
-                        .role("CUSTOMER")
+                        .role(registerRequest.getRole())
                         .build();
         userRepository.save(user);
 
         var jwtToken=jwtService.generateToken(
-                new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), new ArrayList<>()
-                ));
-        return AuthResponse.builder().token(jwtToken).message("User registered successfully").build();
+                new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + user.getRole())))
+                );
+        return AuthResponse.builder().token(jwtToken).message("User registered successfully").role(registerRequest.getRole()).build();
     }
 
     public AuthResponse login(LoginRequest loginRequest){
@@ -54,7 +56,7 @@ public class AuthService {
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
         var jwtToken=jwtService.generateToken(
-                new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), new ArrayList<>())
+                new org.springframework.security.core.userdetails.User(user.getEmail(), user.getPassword(), Collections.singletonList(new SimpleGrantedAuthority("ROLE_" + user.getRole())))
         );
 
         return AuthResponse.builder().token(jwtToken).message("Login Successfull").build();
