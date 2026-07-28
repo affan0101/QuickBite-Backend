@@ -1,10 +1,10 @@
 package com.quickbite.backend.service;
 
-import com.quickbite.backend.Repository.UserRepository;
-import com.quickbite.backend.Security.JwtService;
-import com.quickbite.backend.dto.Request.LoginRequest;
-import com.quickbite.backend.dto.Request.RegisterRequest;
-import com.quickbite.backend.dto.Response.AuthResponse;
+import com.quickbite.backend.repository.UserRepository;
+import com.quickbite.backend.security.JwtService;
+import com.quickbite.backend.dto.request.LoginRequest;
+import com.quickbite.backend.dto.request.RegisterRequest;
+import com.quickbite.backend.dto.response.AuthResponse;
 import com.quickbite.backend.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.authentication.AuthenticationManager;
@@ -13,7 +13,6 @@ import org.springframework.security.core.authority.SimpleGrantedAuthority;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
 
-import java.util.ArrayList;
 import java.util.Collections;
 
 @Service

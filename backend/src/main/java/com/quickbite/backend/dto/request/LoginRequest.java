@@ -1,4 +1,4 @@
-package com.quickbite.backend.dto.Request;
+package com.quickbite.backend.dto.request;
 
 import lombok.Data;
 

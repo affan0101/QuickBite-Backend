@@ -1,4 +1,4 @@
-package com.quickbite.backend.Repository;
+package com.quickbite.backend.repository;
 
 import com.quickbite.backend.entity.User;
 import org.springframework.data.jpa.repository.JpaRepository;

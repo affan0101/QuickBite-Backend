@@ -1,4 +1,4 @@
-package com.quickbite.backend.Security;
+package com.quickbite.backend.security;
 
 import io.jsonwebtoken.Claims;
 import io.jsonwebtoken.Jwts;

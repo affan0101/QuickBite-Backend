@@ -1,4 +1,4 @@
-package com.quickbite.backend.dto.Response;
+package com.quickbite.backend.dto.response;
 
 
 import lombok.AllArgsConstructor;

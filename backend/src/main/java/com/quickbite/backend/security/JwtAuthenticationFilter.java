@@ -1,4 +1,4 @@
-package com.quickbite.backend.Security;
+package com.quickbite.backend.security;
 
 import jakarta.servlet.FilterChain;
 import jakarta.servlet.ServletException;

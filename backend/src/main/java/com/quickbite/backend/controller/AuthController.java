@@ -1,8 +1,8 @@
 package com.quickbite.backend.controller;
 
-import com.quickbite.backend.dto.Request.LoginRequest;
-import com.quickbite.backend.dto.Request.RegisterRequest;
-import com.quickbite.backend.dto.Response.AuthResponse;
+import com.quickbite.backend.dto.request.LoginRequest;
+import com.quickbite.backend.dto.request.RegisterRequest;
+import com.quickbite.backend.dto.response.AuthResponse;
 import com.quickbite.backend.service.AuthService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;

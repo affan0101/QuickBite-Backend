@@ -1,8 +1,9 @@
 package com.quickbite.backend.service;
 
-import com.quickbite.backend.Repository.ProductRepository;
-import com.quickbite.backend.dto.Request.ProductRequest;
-import com.quickbite.backend.dto.Response.ProductResponse;
+import com.quickbite.backend.dto.request.ProductRequest;
+import com.quickbite.backend.dto.response.ProductResponse;
+import com.quickbite.backend.repository.ProductRepository;
+
 import com.quickbite.backend.entity.Product;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

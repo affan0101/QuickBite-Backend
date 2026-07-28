@@ -1,6 +1,6 @@
-package com.quickbite.backend.Security;
+package com.quickbite.backend.security;
 
-import com.quickbite.backend.Repository.UserRepository;
+import com.quickbite.backend.repository.UserRepository;
 import com.quickbite.backend.entity.User;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.core.authority.SimpleGrantedAuthority;

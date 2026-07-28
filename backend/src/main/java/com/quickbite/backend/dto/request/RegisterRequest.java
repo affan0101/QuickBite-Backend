@@ -1,10 +1,8 @@
-package com.quickbite.backend.dto.Request;
+package com.quickbite.backend.dto.request;
 
 
 import com.quickbite.backend.entity.enums.Roles;
 import lombok.Data;
-
-import java.util.List;
 
 
 @Data
